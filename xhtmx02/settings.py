@@ -15,6 +15,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Si DEBUG = TRUE, pas de prise en compte des fausses routes !!!
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
+#ALLOWED_HOSTS = ['localhost','127.0.0.1']
 ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
@@ -27,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
+    'django_htmx',
     'configurations',
 ]
 
@@ -39,7 +42,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 ]
+
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
 ROOT_URLCONF = 'xhtmx02.urls'
 

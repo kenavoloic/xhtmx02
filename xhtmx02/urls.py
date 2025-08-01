@@ -24,7 +24,7 @@ urlpatterns = [
     path('', CustomLoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('tableau/', tableau_de_bord, name='tableau'),
-    #path('', include('configurations.urls'))
+    path('configurations/', include('configurations.urls'))
 ]
 
 handler404 = "configurations.views.page_inconnue"
